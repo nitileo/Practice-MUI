@@ -7,7 +7,7 @@ const router = createBrowserRouter([{
   path: "/",
   element: <Layout />,
   children: [
-    { index: true, element: <User /> },
+    { index: true, element: <User/> },
     { path: "product", element: <Product /> },
   ],
 }
