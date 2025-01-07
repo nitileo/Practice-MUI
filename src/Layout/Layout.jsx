@@ -13,7 +13,7 @@ const Layout = () => {
         flexDirection="column"
         sx={{
           marginLeft: "300px", // Space for the fixed sidebar
-          backgroundColor: "#f5f5f5",
+          backgroundColor: "#f9fafb",
           minHeight: "100vh",
         }}
       >

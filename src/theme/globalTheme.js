@@ -1,6 +1,32 @@
 import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
+  spacing: 4,
+  palette: {
+    primary: {
+      lighter: "#D0ECFE",
+      light: "#73BAFB",
+      main: "#1877F2",
+      dark: "#0C44AE",
+      darker: "#042174",
+    },
+    gray: {
+      50: "#FCFDFD",
+      100: "#F9FAFB",
+      200: "#F4F6F8",
+      300: "#DFE3E8",
+      400: "#C4CDD5",
+      500: "#919EAB",
+      600: "#637381",
+      700: "#454F5B",
+      800: "#1C252E",
+      900: "#141A21",
+    },
+    common: {
+      black: "#000000",
+      white: "#FFFFFF",
+    },
+  },
   components: {
     MuiTable: {
       styleOverrides: {
@@ -11,59 +37,59 @@ const theme = createTheme({
     },
     MuiTableRow: {
       styleOverrides: {
-        root: {
-          backgroundColor: "#fff",
+        root: ({theme})=>({
+          backgroundColor: theme.palette.common.white,
           "&:hover": {
-            backgroundColor: "#f5f5f5",
+            backgroundColor: theme.palette.gray[50],
           },
-        },
+        }),
       },
     },
     MuiTableCell: {
       styleOverrides: {
-        root: {
+        root:({theme}) =>({
           borderBottom: "none",
-          padding: "16px",
+          padding: theme.spacing(4),
           textAlign: "left",
-        },
-        head: {
-          backgroundColor: "#f5f5f5",
-          color: "#333",
+        }),
+        head:({theme})=> ({
+          backgroundColor: theme.palette.gray[200],
+          color: theme.palette.gray[600],
           fontWeight: "bold",
-        },
-        body: {
-          color: "#555",
-        },
+        }),
+        body: ({theme})=>({
+          color: theme.palette.gray[700],
+        }),
       },
     },
     MuiCheckbox: {
       styleOverrides: {
-        root: {
-          color: "#9e9e9e",
+        root:({theme})=> ({
+          color: theme.palette.gray[500],
           "&.Mui-checked": {
-            color: "#1976d2",
+            color: theme.palette.primary.main,
           },
-        },
+        }),
       },
     },
     MuiButton: {
       styleOverrides: {
-        contained: {
-          backgroundColor: "black",
-          color: "#fff",
-        },
-        root: {
+        contained:({theme}) => ({
+          backgroundColor: theme.palette.common.black,
+          color: theme.palette.common.white,
+        }),
+        root:{
           borderRadius: "8px",
         },
       },
     },
     MuiInputBase: {
       styleOverrides: {
-        root: {
-          padding: "12px",
-          border: "1px solid #ccc",
+        root:({theme})=>({
+          padding: theme.spacing(3),
+          border: `1px solid ${theme.palette.gray[300]}`,
           borderRadius: "8px",
-        },
+        }),
       },
     },
     MuiCard: {
@@ -88,9 +114,9 @@ const theme = createTheme({
     },
     MuiCardContent: {
       styleOverrides: {
-        root: {
-          padding: "16px",
-        },
+        root:({theme})=>({
+          padding: theme.spacing(4),
+        }),
       },
     },
     MuiTypography: {
@@ -106,14 +132,18 @@ const theme = createTheme({
     },
     MuiChip: {
       styleOverrides: {
-        root: {
+        root:({theme})=> ({
           position: "absolute",
           top: 8,
           right: 8,
-          color: "#fff",
-        },
-        colorSecondary: {
-          backgroundColor: "#4caf50",
+          color: theme.palette.common.white,
+        }),
+      },
+    },
+    MuiListItemButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 2,
         },
       },
     },

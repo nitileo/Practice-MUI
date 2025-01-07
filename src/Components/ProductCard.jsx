@@ -13,14 +13,9 @@ const ProductCard = ({ product }) => {
       {product.label && (
         <Chip
           label={product.label}
-          color="secondary"
           size="small"
           sx={{
-            position: "absolute",
-            top: 8,
-            right: 8,
             backgroundColor: product.label === "SALE" ? "#f50057" : "#4caf50",
-            color: "#fff",
           }}
         />
       )}

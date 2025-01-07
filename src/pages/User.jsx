@@ -219,8 +219,8 @@ export default function EnhancedTable() {
   return (
     <Box sx={{ width: "100%", paddingX: "40px", paddingY: "16px" }}>
       <Box display="flex" alignItems="center" mb={5} sx={{ paddingX: "40px" }}>
-        <Typography variant="h4" flexGrow={1}>
-          User
+        <Typography variant="h5" fontWeight="bold" flexGrow={1}>
+          Users
         </Typography>
         <Button variant="contained" color="inherit">
           + New user
@@ -280,8 +280,53 @@ export default function EnhancedTable() {
                       </TableCell>
                       <TableCell>{row.company}</TableCell>
                       <TableCell>{row.role}</TableCell>
-                      <TableCell>{row.verified}</TableCell>
-                      <TableCell>{row.status}</TableCell>
+                      <TableCell>
+                        {row.verified === 1 ? (
+                          <Box
+                            sx={{
+                              display: "flex",
+                              alignItems: "center",
+                              gap: 1,
+                              color: "green",
+                            }}
+                          >
+                            <span>✔</span> Verified
+                          </Box>
+                        ) : (
+                          "Not Verified"
+                        )}
+                      </TableCell>
+                      <TableCell>
+                        {row.status === 1 ? (
+                          <Box
+                            sx={{
+                              display: "inline-block",
+                              padding: "4px 8px",
+                              borderRadius: "16px",
+                              backgroundColor: "#e8f5e9",
+                              color: "#388e3c",
+                              fontWeight: "bold",
+                              textAlign: "center",
+                            }}
+                          >
+                            Active
+                          </Box>
+                        ) : (
+                          <Box
+                            sx={{
+                              display: "inline-block",
+                              padding: "4px 8px",
+                              borderRadius: "16px",
+                              backgroundColor: "#ffebee",
+                              color: "#d32f2f",
+                              fontWeight: "bold",
+                              textAlign: "center",
+                            }}
+                          >
+                            Inactive
+                          </Box>
+                        )}
+                      </TableCell>
                     </TableRow>
                   );
                 })}

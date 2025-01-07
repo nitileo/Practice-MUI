@@ -20,19 +20,23 @@ const Login = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        bgcolor: "linear-gradient(to right, #f8f9fa, #e0e0e0)",
+        backgroundColor: "linear-gradient(to right, #f8f9fa, #df8c5b)",
         px: 2,
       }}
     >
       <Box
         sx={{
           maxWidth: 400,
+          minHeight: 534,
           width: "100%",
           bgcolor: "white",
           borderRadius: 2,
           boxShadow: 3,
-          p: 3,
+          padding: "40px 24px",
           textAlign: "center",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-evenly",
         }}
       >
         <Typography variant="h5" fontWeight="bold" mb={1}>
@@ -48,13 +52,6 @@ const Login = () => {
             placeholder="Email address"
             disableUnderline
             defaultValue="hello@gmail.com"
-            sx={{
-              border: "1px solid #ccc",
-              borderRadius: 2,
-              px: 1.5,
-              py: 1,
-              mb: 2,
-            }}
           />
           <Box
             sx={{
@@ -64,12 +61,15 @@ const Login = () => {
               mb: 2,
             }}
           >
-            <Typography variant="body2">Forgot password?</Typography>
+            <Typography variant="body2" marginTop="4px">
+              Forgot password?
+            </Typography>
           </Box>
           <Input
             fullWidth
             type="password"
             placeholder="Password"
+            defaultValue={"123456"}
             disableUnderline
             sx={{
               position: "relative",
