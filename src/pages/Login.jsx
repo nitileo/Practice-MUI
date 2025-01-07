@@ -72,10 +72,6 @@ const Login = () => {
             placeholder="Password"
             disableUnderline
             sx={{
-              border: "1px solid #ccc",
-              borderRadius: 2,
-              px: 1.5,
-              py: 1,
               position: "relative",
             }}
           />
