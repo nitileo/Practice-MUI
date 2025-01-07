@@ -14,17 +14,16 @@ const Sidebar = () => {
   return (
     <Box
       sx={{
-        width: "300px", // Fixed width
-        height: "100vh", // Full viewport height
-        position: "fixed", // Fixed position
+        width: "300px",
+        height: "100vh", 
+        position: "fixed", 
         top: 0,
         left: 0,
         display: "flex",
         flexDirection: "column",
-        backgroundColor: "#fff", // Background color
-        boxShadow: "2px 0 5px rgba(0, 0, 0, 0.1)", // Subtle shadow for better separation
+        backgroundColor: "#fff", 
         padding: "16px",
-        zIndex: 1200, // Ensures it stays on top of other elements
+        zIndex: 1200, 
       }}
     >
       <Link to="/">
@@ -75,7 +74,7 @@ const Sidebar = () => {
           alt="Feature graphic"
           sx={{ width: "70%", mt: 2, borderRadius: 2, marginX: "auto" }}
         />
-        <Button variant="contained" color="primary" sx={{ mt: 2 }}>
+        <Button variant="contained" sx={{ mt: 2 }}>
           Upgrade to Pro
         </Button>
       </Box>

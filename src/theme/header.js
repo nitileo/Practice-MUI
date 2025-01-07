@@ -1,12 +1,13 @@
 import { createTheme } from "@mui/material";
 
+
+//not use
+
 const theme = createTheme({
     components: {
-      // Name of the component
       MuiAppBar: {
         styleOverrides: {
           root: {
-            // Some CSS
             fontSize: '1rem',
             backgroundColor: 'gray',
             colors:"white",

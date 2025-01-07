@@ -18,7 +18,7 @@ const Header = () => {
             sx={{
               backgroundColor: "transparent", 
               boxShadow: "none", 
-              alignItems:"flex-end"
+              alignItems:"flex-end",
             }}
           >
             <Toolbar>

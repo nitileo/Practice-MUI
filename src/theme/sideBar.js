@@ -1,8 +1,9 @@
 import { createTheme } from "@mui/material";
 
+//not use
+
 const theme = createTheme({
     components: {
-      // Name of the component
       MuiBox: {
         styleOverrides: {
           root: {
