@@ -5,7 +5,6 @@ const theme = createTheme({
       // Name of the component
       MuiAppBar: {
         styleOverrides: {
-
           root: {
             // Some CSS
             fontSize: '1rem',

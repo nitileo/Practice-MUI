@@ -2,14 +2,12 @@ import {
   AppBar,
   Box,
   IconButton,
-  ThemeProvider,
   Toolbar,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import FlagIcon from "@mui/icons-material/Flag";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import PersonIcon from "@mui/icons-material/Person";
-import theme from "../theme/header";
 
 const Header = () => {
   return (

@@ -7,7 +7,16 @@ const Layout = () => {
   return (
     <Box display="flex">
       <Sidebar />
-      <Box flex={1} display="flex" flexDirection="column" sx={{ backgroundColor: "#f5f5f5" }} >
+      <Box
+        flex={1}
+        display="flex"
+        flexDirection="column"
+        sx={{
+          marginLeft: "300px", // Space for the fixed sidebar
+          backgroundColor: "#f5f5f5",
+          minHeight: "100vh",
+        }}
+      >
         <Header />
         <Outlet />
       </Box>
