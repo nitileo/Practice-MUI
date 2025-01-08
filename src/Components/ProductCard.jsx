@@ -31,6 +31,7 @@ const ProductCard = ({ product }) => {
           gap={1}
           mt={1}
         >
+          <Box display={"flex"}>
           {product.colors.map((color, index) => (
             <Box
               key={index}
@@ -42,6 +43,7 @@ const ProductCard = ({ product }) => {
               }}
             />
           ))}
+          </Box>
           <Box mt={1} sx={{ marginY: "auto" }}>
             {product.oldPrice && (
               <Typography

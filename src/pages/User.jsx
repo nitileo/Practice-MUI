@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { alpha } from "@mui/material/styles";
+import { alpha, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -162,6 +162,8 @@ export default function EnhancedTable() {
   const [dense, setDense] = useState(false);
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
+  const theme = useTheme()
+
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";
     setOrder(isAsc ? "desc" : "asc");
@@ -301,7 +303,7 @@ export default function EnhancedTable() {
                           <Box
                             sx={{
                               display: "inline-block",
-                              padding: "4px 8px",
+                              padding: theme.spacing(1,2),
                               borderRadius: "16px",
                               backgroundColor: "#e8f5e9",
                               color: "#388e3c",
@@ -315,7 +317,7 @@ export default function EnhancedTable() {
                           <Box
                             sx={{
                               display: "inline-block",
-                              padding: "4px 8px",
+                              padding: theme.spacing(1,2),
                               borderRadius: "16px",
                               backgroundColor: "#ffebee",
                               color: "#d32f2f",
@@ -323,7 +325,7 @@ export default function EnhancedTable() {
                               textAlign: "center",
                             }}
                           >
-                            Inactive
+                            Banned
                           </Box>
                         )}
                       </TableCell>

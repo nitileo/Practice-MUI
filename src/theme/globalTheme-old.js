@@ -27,10 +27,6 @@ const theme = createTheme({
       white: "#FFFFFF",
     },
   },
-})
-
-
-const globalTheme = createTheme(theme,{
   components: {
     MuiTable: {
       styleOverrides: {
@@ -41,47 +37,47 @@ const globalTheme = createTheme(theme,{
     },
     MuiTableRow: {
       styleOverrides: {
-        root:{
+        root: ({theme})=>({
           backgroundColor: theme.palette.common.white,
           "&:hover": {
             backgroundColor: theme.palette.gray[50],
           },
-        },
+        }),
       },
     },
     MuiTableCell: {
       styleOverrides: {
-        root: {
+        root:({theme}) =>({
           borderBottom: "none",
           padding: theme.spacing(4),
           textAlign: "left",
-        },
-        head: {
+        }),
+        head:({theme})=> ({
           backgroundColor: theme.palette.gray[200],
           color: theme.palette.gray[600],
           fontWeight: "bold",
-        },
-        body:{
+        }),
+        body: ({theme})=>({
           color: theme.palette.gray[700],
-        },
+        }),
       },
     },
     MuiCheckbox: {
       styleOverrides: {
-        root:{
+        root:({theme})=> ({
           color: theme.palette.gray[500],
           "&.Mui-checked": {
             color: theme.palette.primary.main,
           },
-        },
+        }),
       },
     },
     MuiButton: {
       styleOverrides: {
-        contained:{
+        contained:({theme}) => ({
           backgroundColor: theme.palette.common.black,
           color: theme.palette.common.white,
-        },
+        }),
         root:{
           borderRadius: "8px",
         },
@@ -89,11 +85,11 @@ const globalTheme = createTheme(theme,{
     },
     MuiInputBase: {
       styleOverrides: {
-        root:{
+        root:({theme})=>({
           padding: theme.spacing(3),
           border: `1px solid ${theme.palette.gray[300]}`,
           borderRadius: "8px",
-        },
+        }),
       },
     },
     MuiCard: {
@@ -118,9 +114,9 @@ const globalTheme = createTheme(theme,{
     },
     MuiCardContent: {
       styleOverrides: {
-        root:{
+        root:({theme})=>({
           padding: theme.spacing(4),
-        },
+        }),
       },
     },
     MuiTypography: {
@@ -136,12 +132,12 @@ const globalTheme = createTheme(theme,{
     },
     MuiChip: {
       styleOverrides: {
-        root:{
+        root:({theme})=> ({
           position: "absolute",
           top: 8,
           right: 8,
           color: theme.palette.common.white,
-        },
+        }),
       },
     },
     MuiListItemButton: {
@@ -154,7 +150,4 @@ const globalTheme = createTheme(theme,{
   },
 });
 
-export default globalTheme;
-
-
-
+export default theme;
