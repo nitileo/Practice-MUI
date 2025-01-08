@@ -97,7 +97,6 @@ function EnhancedTableToolbar(props) {
     <Toolbar
       sx={[
         {
-          padding: "24px",
           display: "flex",
           justifyContent: "space-between",
         },
@@ -128,9 +127,6 @@ function EnhancedTableToolbar(props) {
             </InputAdornment>
           }
           disableUnderline
-          sx={{
-            background: "#fff",
-          }}
         />
       )}
       {numSelected > 0 ? (
@@ -221,7 +217,7 @@ export default function EnhancedTable() {
   return (
     <Box sx={{ width: "100%", paddingX: "40px", paddingY: "16px" }}>
       <Box display="flex" alignItems="center" mb={5} sx={{ paddingX: "40px" }}>
-        <Typography variant="h5" fontWeight="bold" flexGrow={1}>
+        <Typography variant="h4" flexGrow={1}>
           Users
         </Typography>
         <Button variant="contained" color="inherit">

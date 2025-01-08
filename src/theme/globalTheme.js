@@ -1,6 +1,52 @@
+import { Paper } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
+  typography: {
+    fontFamily: '"DM Sans Variable", "Roboto", "Helvetica", "Arial", sans-serif',
+    h1:{
+      fontWeight: 800,
+      fontSize: "40px",
+    },
+    h2:{
+      fontWeight: 800,
+      fontSize: "32px",
+    },
+    h3: {
+      fontWeight: 700,
+      fontSize: "24px",
+    },
+    h4: {
+      fontWeight: 700,
+      fontSize: "24px",
+    },
+    h5: {
+      fontWeight: 700,
+      fontSize: "20px",
+    },
+    h6: {
+      fontWeight: 600,
+      fontSize: "18px",
+    },
+    subtitle1: {
+      fontWeight: 600,
+      fontSize: "16px",
+    },
+    subtitle2: {
+      fontWeight: 600,
+      fontSize: "14px",
+    },
+    body1: {
+      fontWeight: "normal",
+      fontSize: "16px",
+    },
+    body2: {
+      fontSize: "14px",
+    },
+    caption: {
+      fontSize: "12px",
+    },
+  },
   spacing: 4,
   palette: {
     primary: {
@@ -41,6 +87,13 @@ const globalTheme = createTheme(theme, {
         },
       },
     },
+    MuiToolbar:{
+      styleOverrides:{
+        root:{
+          padding:theme.spacing(6,6),
+        }
+      }
+    },
     MuiTableCell: {
       styleOverrides: {
         root: {
@@ -69,6 +122,22 @@ const globalTheme = createTheme(theme, {
       },
     },
     MuiButton: {
+      variants: [
+        {
+          props: { variant: "signIn" },
+          style: {
+            width: "100%",
+            fontWeight: "bold",
+            fontSize: "15",
+            backgroundColor: theme.palette.common.black,
+            color: theme.palette.common.white,
+            padding: theme.spacing(2, 5.5),
+            "&:hover": {
+              backgroundColor: theme.palette.gray[700],
+            },
+          },
+        },
+      ],
       styleOverrides: {
         contained: {
           backgroundColor: theme.palette.common.black,
@@ -85,13 +154,14 @@ const globalTheme = createTheme(theme, {
           padding: theme.spacing(3),
           border: `1px solid ${theme.palette.gray[300]}`,
           borderRadius: "8px",
+          backgroundColor: theme.palette.common.white
         },
       },
     },
     MuiCard: {
       styleOverrides: {
         root: {
-          width: "350px",
+          width: "324px",
           height: "100%",
           borderRadius: "8px",
           display: "flex",
@@ -102,7 +172,6 @@ const globalTheme = createTheme(theme, {
           boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
           transition: "transform 0.3s, box-shadow 0.3s",
           "&:hover": {
-            transform: "scale(1.03)",
             boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.2)",
           },
         },
@@ -150,6 +219,38 @@ const globalTheme = createTheme(theme, {
           boxShadow: "none",
           alignItems: "flex-end",
           padding: theme.spacing(2,10)
+        },
+      },
+    },
+    MuiTablePagination:{
+      styleOverrides:{
+        input:{
+          padding: 0,
+          border: "none"
+        }
+      }
+    },
+    MuiMenuItem:{
+      styleOverrides:{
+        root:{
+          borderRadius: "8px"
+        }
+      }
+    },
+    MuiPopover:{
+      styleOverrides:{
+        paper:{
+          borderRadius: "8px",
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)"
+        }
+      }
+    },
+    MuiPaper:{
+      styleOverrides: {
+        root: {
+          "&.MuiTableContainer-root": {
+            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)", 
+          },
         },
       },
     },

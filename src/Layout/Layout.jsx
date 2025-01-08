@@ -11,10 +11,10 @@ const Layout = () => {
         flex={1}
         display="flex"
         flexDirection="column"
+        minHeight="100vh"
+        marginLeft="300px"
         sx={{
-          marginLeft: "300px", // Space for the fixed sidebar
           backgroundColor: "#f9fafb",
-          minHeight: "100vh",
         }}
       >
         <Header />

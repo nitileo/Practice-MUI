@@ -22,22 +22,17 @@ const Sidebar = () => {
 
   return (
     <Box
-      sx={{
-        width: "300px",
-        height: "100vh",
-        position: "fixed",
-        top: 0,
-        left: 0,
-        display: "flex",
-        flexDirection: "column",
-        backgroundColor: "#fff",
-        padding: "16px",
-        zIndex: 1200,
-      }}
+      width="300px"
+      height="100vh"
+      position="fixed"
+      display="flex"
+      flexDirection="column"
+      p={4}
+      zIndex={1200}
     >
       <Link to="/">
         <Avatar
-          sx={{ width: 40, height: 40, bgcolor: "blue",marginBottom:"20px" }}
+          sx={{ width: 40, height: 40, bgcolor: "blue", marginBottom: "20px" }}
         >
           M
         </Avatar>
@@ -51,15 +46,15 @@ const Sidebar = () => {
           >
             <ListItem disablePadding>
               <ListItemButton
-                onClick={() => setActiveIndex(index)} // Set the active button
+                onClick={() => setActiveIndex(index)} 
                 sx={{
                   borderRadius: 2,
-                  backgroundColor: activeIndex === index ? "#eff4fe" : "inherit",
+                  backgroundColor:
+                    activeIndex === index ? "#eff4fe" : "inherit",
                   color: activeIndex === index ? "#2a7df3" : "inherit",
                   "&:hover": {
-                    backgroundColor: activeIndex === index
-                      ? "#cedeff"
-                      : "#f5f5f5",
+                    backgroundColor:
+                      activeIndex === index ? "#cedeff" : "#f5f5f5",
                   },
                 }}
               >
@@ -69,18 +64,21 @@ const Sidebar = () => {
           </Link>
         ))}
       </List>
-      <Box sx={{ mt: "auto", textAlign: "center" }}>
-        <Typography variant="body2" color="textSecondary" sx={{ mt: 2 }}>
+      <Box mt="auto" textAlign="center">
+        <Typography variant="h6" color="textSecondary" mt={2}>
           More features?
         </Typography>
-        <Typography variant="h6" color="textPrimary">
+        <Typography variant="subtitle2" color="textPrimary">
           From only $69
         </Typography>
         <Box
           component="img"
           src="https://via.placeholder.com/150"
           alt="Feature graphic"
-          sx={{ width: "70%", mt: 2, borderRadius: 2, marginX: "auto" }}
+          mx="auto"
+          width="65%"
+          mt={2}
+          borderRadius={2}
         />
         <Button variant="contained" sx={{ mt: 2 }}>
           Upgrade to Pro

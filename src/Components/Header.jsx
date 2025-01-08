@@ -3,7 +3,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import FlagIcon from "@mui/icons-material/Flag";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 
-import UserPopover from "./popOver/UserPopOver";
+import UserPopOver from "../Components/popOver/UserPopOver";
 
 const Header = () => {
   return (
@@ -11,7 +11,7 @@ const Header = () => {
       <Box display="flex">
         <AppBar position="static">
           <Toolbar>
-            <Box display={"flex"}>
+            <Box display="flex" gap={2}>
               <IconButton aria-label="search">
                 <SearchIcon />
               </IconButton>
@@ -23,7 +23,7 @@ const Header = () => {
                   <NotificationsIcon />
                 </Badge>
               </IconButton>
-                <UserPopover/>
+                <UserPopOver/>
             </Box>
           </Toolbar>
         </AppBar>

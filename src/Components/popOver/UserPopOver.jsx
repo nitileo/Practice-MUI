@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import {
-  Avatar,
   IconButton,
   Popover,
   Typography,
   Box,
-  List,
-  ListItem,
   ListItemIcon,
   ListItemText,
   Divider,
+  MenuList,
+  MenuItem,
+  Button,
 } from "@mui/material";
 import { Home, Person, Settings } from "@mui/icons-material";
 import PersonIcon from "@mui/icons-material/Person";
 
-const UserPopover = () => {
+const UserPopOver = () => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
@@ -31,7 +31,7 @@ const UserPopover = () => {
   return (
     <div>
       <IconButton onClick={handleClick}>
-        <PersonIcon/>
+        <PersonIcon />
       </IconButton>
 
       <Popover
@@ -48,50 +48,43 @@ const UserPopover = () => {
           horizontal: "right",
         }}
       >
-        <Box sx={{ padding: 2, minWidth: 200, textAlign:"center" }}>
-          <Typography variant="subtitle1" fontWeight="bold">
+        <Box p={3} minWidth={200} textAlign="left">
+          <Typography variant="subtitle1" fontWeight="bold" textAlign="center">
             Jaydon Frankie
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="text.secondary" textAlign="center">
             demo@minimals.cc
           </Typography>
-
           <Divider sx={{ my: 1 }} />
-
-          <List>
-            <ListItem button>
+          <MenuList>
+            <MenuItem>
               <ListItemIcon>
                 <Home />
               </ListItemIcon>
               <ListItemText primary="Home" />
-            </ListItem>
-            <ListItem button>
+            </MenuItem>
+            <MenuItem>
               <ListItemIcon>
                 <Person />
               </ListItemIcon>
               <ListItemText primary="Profile" />
-            </ListItem>
-            <ListItem button>
+            </MenuItem>
+            <MenuItem>
               <ListItemIcon>
                 <Settings />
               </ListItemIcon>
               <ListItemText primary="Settings" />
-            </ListItem>
-          </List>
+            </MenuItem>
+          </MenuList>
 
           <Divider sx={{ my: 1 }} />
-          <Typography
-            variant="body2"
-            color="error"
-            sx={{ cursor: "pointer", textAlign: "center" }}
-            onClick={handleClose}
-          >
+          <Button fullWidth color="error" size="medium" variant="text" >
             Logout
-          </Typography>
+          </Button>
         </Box>
       </Popover>
     </div>
   );
 };
 
-export default UserPopover;
+export default UserPopOver;

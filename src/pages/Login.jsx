@@ -11,40 +11,46 @@ import GoogleIcon from "@mui/icons-material/Google";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
+import { useTheme } from "@emotion/react";
 
 const Login = () => {
+  const theme = useTheme();
   return (
     <Box
-      sx={{
-        minHeight: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "linear-gradient(to right, #f8f9fa, #df8c5b)",
-        px: 2,
-      }}
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      paddingX={2}
+      minHeight="100vh"
+      bgcolor={"whitesmoke"}
     >
       <Box
-        sx={{
-          maxWidth: 400,
-          minHeight: 534,
-          width: "100%",
-          bgcolor: "white",
-          borderRadius: 2,
-          boxShadow: 3,
-          padding: "40px 24px",
-          textAlign: "center",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-evenly",
-        }}
+        maxWidth={400}
+        minHeight={534}
+        width="100%"
+        display="flex"
+        flexDirection="column"
+        justifyContent={"space-evenly"}
+        px={6}
+        py={10}
+        borderRadius={2}
+        textAlign={"center"}
+        bgcolor={"white"}
       >
-        <Typography variant="h5" fontWeight="bold" mb={1}>
+        <Typography variant="h5" mb={1}>
           Sign in
         </Typography>
-        <Typography variant="body2" mb={2}>
-          Don’t have an account?
-        </Typography>
+        <Box display={"flex"} justifyContent={"center"} gap={1}>
+          <Typography variant="body1" mb={1}>
+            Don’t have an account?
+          </Typography>
+          <Typography
+            variant="subtitle2"
+            sx={{ ml: 0.5, color: theme.palette.primary.main }}
+          >
+            Get started
+          </Typography>
+        </Box>
 
         <Box mb={2}>
           <Input
@@ -54,14 +60,12 @@ const Login = () => {
             defaultValue="hello@gmail.com"
           />
           <Box
-            sx={{
-              display: "flex",
-              justifyContent: "end",
-              alignItems: "center",
-              mb: 2,
-            }}
+            display="flex"
+            justifyContent="end"
+            alignItems="center"
+            marginBottom={2}
           >
-            <Typography variant="body2" marginTop="4px">
+            <Typography variant="body1" marginTop="4px">
               Forgot password?
             </Typography>
           </Box>
@@ -71,25 +75,13 @@ const Login = () => {
             placeholder="Password"
             defaultValue={"123456"}
             disableUnderline
-            sx={{
-              position: "relative",
-            }}
           />
         </Box>
         <Link to="/">
-          <Button
-            fullWidth
-            variant="contained"
-            color="primary"
-            sx={{ fontWeight: "bold", mb: 2 }}
-          >
-            Sign in
-          </Button>
+          <Button variant="signIn">Sign in</Button>
         </Link>
-
         <Divider sx={{ my: 2 }}>OR</Divider>
-
-        <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
+        <Box display="flex" justifyContent="center" gap={2}>
           <IconButton>
             <GoogleIcon color="primary" />
           </IconButton>
