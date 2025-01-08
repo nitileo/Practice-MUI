@@ -27,24 +27,16 @@ const theme = createTheme({
       white: "#FFFFFF",
     },
   },
-})
+});
 
-
-const globalTheme = createTheme(theme,{
+const globalTheme = createTheme(theme, {
   components: {
-    MuiTable: {
-      styleOverrides: {
-        root: {
-          borderSpacing: "0 8px",
-        },
-      },
-    },
     MuiTableRow: {
       styleOverrides: {
-        root:{
+        root: {
           backgroundColor: theme.palette.common.white,
           "&:hover": {
-            backgroundColor: theme.palette.gray[50],
+            backgroundColor: theme.palette.gray[100],
           },
         },
       },
@@ -61,14 +53,14 @@ const globalTheme = createTheme(theme,{
           color: theme.palette.gray[600],
           fontWeight: "bold",
         },
-        body:{
+        body: {
           color: theme.palette.gray[700],
         },
       },
     },
     MuiCheckbox: {
       styleOverrides: {
-        root:{
+        root: {
           color: theme.palette.gray[500],
           "&.Mui-checked": {
             color: theme.palette.primary.main,
@@ -78,18 +70,18 @@ const globalTheme = createTheme(theme,{
     },
     MuiButton: {
       styleOverrides: {
-        contained:{
+        contained: {
           backgroundColor: theme.palette.common.black,
           color: theme.palette.common.white,
         },
-        root:{
+        root: {
           borderRadius: "8px",
         },
       },
     },
     MuiInputBase: {
       styleOverrides: {
-        root:{
+        root: {
           padding: theme.spacing(3),
           border: `1px solid ${theme.palette.gray[300]}`,
           borderRadius: "8px",
@@ -118,7 +110,7 @@ const globalTheme = createTheme(theme,{
     },
     MuiCardContent: {
       styleOverrides: {
-        root:{
+        root: {
           padding: theme.spacing(4),
         },
       },
@@ -136,7 +128,7 @@ const globalTheme = createTheme(theme,{
     },
     MuiChip: {
       styleOverrides: {
-        root:{
+        root: {
           position: "absolute",
           top: 8,
           right: 8,
@@ -151,10 +143,17 @@ const globalTheme = createTheme(theme,{
         },
       },
     },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "transparent",
+          boxShadow: "none",
+          alignItems: "flex-end",
+          padding: theme.spacing(2,10)
+        },
+      },
+    },
   },
 });
 
 export default globalTheme;
-
-
-

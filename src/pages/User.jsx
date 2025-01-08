@@ -253,7 +253,6 @@ export default function EnhancedTable() {
 
                   return (
                     <TableRow
-                      hover
                       onClick={(event) => handleClick(event, row.id)}
                       role="checkbox"
                       aria-checked={isItemSelected}

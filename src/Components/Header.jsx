@@ -12,14 +12,9 @@ import PersonIcon from "@mui/icons-material/Person";
 const Header = () => {
   return (
     <>
-        <Box display="flex" sx={{color:"slategrey"}}>
+        <Box display="flex">
           <AppBar
             position="static"
-            sx={{
-              backgroundColor: "transparent", 
-              boxShadow: "none", 
-              alignItems:"flex-end",
-            }}
           >
             <Toolbar>
               <Box>
@@ -32,7 +27,7 @@ const Header = () => {
                 <IconButton aria-label="search">
                   <NotificationsIcon />
                 </IconButton>
-                <IconButton aria-label="search">
+                <IconButton aria-label="user">
                   <PersonIcon />
                 </IconButton>
               </Box>
