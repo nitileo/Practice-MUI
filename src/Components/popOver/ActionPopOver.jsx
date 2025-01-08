@@ -26,12 +26,10 @@ const ActionPopover = () => {
 
   return (
     <Box>
-      {/* Icon Button to trigger the Popover */}
       <IconButton onClick={handleClick}>
         <MoreVertIcon />
       </IconButton>
 
-      {/* Popover */}
       <Popover
         open={open}
         anchorEl={anchorEl}

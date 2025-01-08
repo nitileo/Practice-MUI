@@ -142,10 +142,16 @@ const globalTheme = createTheme(theme, {
         contained: {
           backgroundColor: theme.palette.common.black,
           color: theme.palette.common.white,
+          fontWeight: "bold"
         },
         root: {
           borderRadius: "8px",
         },
+        containedSecondary:{
+          backgroundColor: theme.palette.primary.main,
+          color: theme.palette.common.white,
+          fontWeight: "bold"
+        }
       },
     },
     MuiInputBase: {
