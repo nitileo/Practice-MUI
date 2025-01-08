@@ -22,6 +22,7 @@ import { useMemo, useState } from "react";
 import { Avatar, Button, Input, InputAdornment } from "@mui/material";
 import { Search } from "@mui/icons-material";
 import { headCells, rows } from "../data/data";
+import ActionPopover from "../Components/popover/ActionPopOver";
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -249,7 +250,6 @@ export default function EnhancedTable() {
 
                   return (
                     <TableRow
-                      onClick={(event) => handleClick(event, row.id)}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
@@ -260,6 +260,8 @@ export default function EnhancedTable() {
                         <Checkbox
                           color="primary"
                           checked={isItemSelected}
+                          onChange={(event) => handleClick(event, row.id)} 
+                          onClick={(event) => event.stopPropagation()} 
                           inputProps={{
                             "aria-labelledby": labelId,
                           }}
@@ -323,6 +325,9 @@ export default function EnhancedTable() {
                             Banned
                           </Box>
                         )}
+                      </TableCell>
+                      <TableCell>
+                        <ActionPopover/>
                       </TableCell>
                     </TableRow>
                   );

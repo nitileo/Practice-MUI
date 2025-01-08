@@ -161,4 +161,10 @@ export const products = [
       disablePadding: false,
       label: "status",
     },
+    {
+      id: "",
+      numeric: true,
+      disablePadding: false,
+      label: "",
+    },
   ];

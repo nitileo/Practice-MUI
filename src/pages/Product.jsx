@@ -14,13 +14,7 @@ const ProductGrid = () => {
       <Grid2 container spacing={4} px={10} py={4}>
         {products.map((product, index) => (
           <Grid2 item xs={12} sm={6} md={4} lg={3} key={index}>
-            <Box
-              sx={{
-                height: "100%", 
-                display: "flex",
-                flexDirection: "column", 
-              }}
-            >
+            <Box height={"100%"} display={"flex"} flexDirection={"column"}>
               <ProductCard product={product} />
             </Box>
           </Grid2>
