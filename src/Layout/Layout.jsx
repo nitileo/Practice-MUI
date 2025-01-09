@@ -13,9 +13,7 @@ const Layout = () => {
         flexDirection="column"
         minHeight="100vh"
         marginLeft="300px"
-        sx={{
-          backgroundColor: "#f9fafb",
-        }}
+        bgcolor={"#f9fafb"}
       >
         <Header />
         <Outlet />

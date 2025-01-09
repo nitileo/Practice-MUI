@@ -19,7 +19,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
 import { useMemo, useState } from "react";
-import { Avatar, Button, Input, InputAdornment } from "@mui/material";
+import { Avatar, Button, Chip, Input, InputAdornment } from "@mui/material";
 import { Search } from "@mui/icons-material";
 import { headCells, rows } from "../data/data";
 import ActionPopover from "../Components/popover/ActionPopOver";
@@ -159,7 +159,7 @@ export default function EnhancedTable() {
   const [dense, setDense] = useState(false);
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
-  const theme = useTheme()
+  const theme = useTheme();
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";
@@ -216,8 +216,8 @@ export default function EnhancedTable() {
   );
 
   return (
-    <Box sx={{ width: "100%", paddingX: "40px", paddingY: "16px" }}>
-      <Box display="flex" alignItems="center" mb={5} sx={{ paddingX: "40px" }}>
+    <Box width={"100%"} p={theme.spacing(4, 10)}>
+      <Box display="flex" alignItems="center" mb={5} px={10}>
         <Typography variant="h4" flexGrow={1}>
           Users
         </Typography>
@@ -226,7 +226,7 @@ export default function EnhancedTable() {
         </Button>
       </Box>
 
-      <Box sx={{ width: "100%", padding: "16px 40px 64px 40px" }}>
+      <Box width={"100%"} p={theme.spacing(4, 10, 16)}>
         <Paper sx={{ width: "100%", mb: 2, borderRadius: 2 }}>
           <EnhancedTableToolbar numSelected={selected.length} />
           <TableContainer>
@@ -260,19 +260,15 @@ export default function EnhancedTable() {
                         <Checkbox
                           color="primary"
                           checked={isItemSelected}
-                          onChange={(event) => handleClick(event, row.id)} 
-                          onClick={(event) => event.stopPropagation()} 
+                          onChange={(event) => handleClick(event, row.id)}
+                          onClick={(event) => event.stopPropagation()}
                           inputProps={{
                             "aria-labelledby": labelId,
                           }}
                         />
                       </TableCell>
                       <TableCell component="th" id={labelId} scope="row">
-                        <Box
-                          display="flex"
-                          alignItems={"center"}
-                          sx={{ gap: 2 }}
-                        >
+                        <Box display="flex" alignItems="center" gap={2}>
                           <Avatar>{row.name[0]}</Avatar>
                           {row.name}
                         </Box>
@@ -280,23 +276,40 @@ export default function EnhancedTable() {
                       <TableCell>{row.company}</TableCell>
                       <TableCell>{row.role}</TableCell>
                       <TableCell>
-                        {row.verified === 1 ? (
+                      <Typography
+                          variant="body2"
+                          color={row.verified === 1 ? "success" : "error.main"}
+                          pl={3}
+                        >
+                          {row.verified === 1 ? "✔" : "-"}
+                        </Typography>
+                        {/* {row.verified === 1 ? (
                           <Box
-                            sx={{
-                              display: "flex",
-                              alignItems: "center",
-                              gap: 1,
-                              color: "green",
-                            }}
+                            display="flex"
+                            alignItems="center"
+                            gap={1}
+                            color="success.main"
                           >
                             <span>✔</span> Verified
                           </Box>
                         ) : (
                           "Not Verified"
-                        )}
+                        )} */}
                       </TableCell>
                       <TableCell>
-                        {row.status === 1 ? (
+                        <Typography
+                          variant="body2"
+                          display="inline-block"
+                          p={theme.spacing(1, 3)}
+                          bgcolor={row.status === 1 ? "#e8f5e9" : "#ffebee"}
+                          color={row.status === 1 ? "success" : "error.main"}
+                          textAlign={"center"}
+                          borderRadius={2}
+                          fontWeight={"bold"}
+                        >
+                          {row.status === 1 ? "Active" : "Banned"}
+                        </Typography>
+                        {/* {row.status === 1 ? (
                           <Box
                             sx={{
                               display: "inline-block",
@@ -324,10 +337,10 @@ export default function EnhancedTable() {
                           >
                             Banned
                           </Box>
-                        )}
+                        )} */}
                       </TableCell>
                       <TableCell>
-                        <ActionPopover/>
+                        <ActionPopover />
                       </TableCell>
                     </TableRow>
                   );

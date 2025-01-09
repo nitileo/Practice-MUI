@@ -35,12 +35,7 @@ const ProductCard = ({ product }) => {
           {product.colors.map((color, index) => (
             <Box
               key={index}
-              sx={{
-                width: 16,
-                height: 16,
-                borderRadius: "50%",
-                backgroundColor: color,
-              }}
+              width={16} height={16} bgcolor={color} borderRadius={"50%"}
             />
           ))}
           </Box>
@@ -49,11 +44,11 @@ const ProductCard = ({ product }) => {
               <Typography
                 variant="body2"
                 component="span"
+                display={"inline"}
+                mr={2}
+                color="gray"
                 sx={{
                   textDecoration: "line-through",
-                  color: "gray",
-                  display: "inline",
-                  marginRight: "8px",
                 }}
               >
                 {product.oldPrice}
@@ -62,9 +57,7 @@ const ProductCard = ({ product }) => {
             <Typography
               variant="body2"
               component="span"
-              sx={{
-                fontWeight: "bold",
-              }}
+              fontWeight="bold"
             >
               {product.price}
             </Typography>
