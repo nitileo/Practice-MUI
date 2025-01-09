@@ -38,11 +38,11 @@ const ProductCard = ({ product }) => {
           </Box>
           <Box mt={1} my="auto">
             {product.oldPrice && (
-              <Typography variant="body1" component="span" sx={oldPriceText}>
+              <Typography variant="subtitle1" component="span" sx={oldPriceText}>
                 {product.oldPrice}
               </Typography>
             )}
-            <Typography variant="body1" component="span" fontWeight="bold">
+            <Typography variant="subtitle1" component="span" fontWeight="bold">
               {product.price}
             </Typography>
           </Box>

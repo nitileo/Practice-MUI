@@ -4,6 +4,7 @@ import {
   MenuList,
   Popover,
   Typography,
+  useTheme,
 } from "@mui/material";
 import { useState } from "react";
 
@@ -20,14 +21,19 @@ const SortProduct = () => {
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
 
-  const sortText = ["Feature","Newest","Price: High-Low","Price: Low-High"]
+  const sortText = ["Feature", "Newest", "Price: High-Low", "Price: Low-High"];
 
-  const [name,setName] = useState("Feature")
+  const [name, setName] = useState("Feature");
 
   const handleSort = (text) => {
     setName(text);
-    handleClose()
-  }
+    handleClose();
+  };
+
+  const theme = useTheme();
+  const styleOverrides =
+    theme.components["SortProductBar"]?.styleOverrides || {};
+  const { MenuListSetting } = styleOverrides;
 
   return (
     <>
@@ -35,8 +41,13 @@ const SortProduct = () => {
         <Typography variant="subtitle2" color="initial">
           Sort By : {""}
         </Typography>
-        <Typography variant="subtitle2" component={"span"} color="text.secondary" ml={1}>
-            {name}
+        <Typography
+          variant="subtitle2"
+          component="span"
+          color="text.secondary"
+          ml={1}
+        >
+          {name}
         </Typography>
       </ButtonBase>
 
@@ -54,20 +65,12 @@ const SortProduct = () => {
           horizontal: "right",
         }}
       >
-        <MenuList
-          sx={{
-            p: 0.5,
-            gap: 0.5,
-            width: 160,
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          {sortText.map((text,index)=>(
-            <MenuItem key={index} onClick={()=>handleSort(text)}>
-                <Typography variant="body2" color="text.secondary">
-                    {text}
-                </Typography>
+        <MenuList sx={MenuListSetting}>
+          {sortText.map((text, index) => (
+            <MenuItem key={index} onClick={() => handleSort(text)}>
+              <Typography variant="body2" color="text.secondary">
+                {text}
+              </Typography>
             </MenuItem>
           ))}
         </MenuList>

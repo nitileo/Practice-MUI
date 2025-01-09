@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Box,
   Button,
@@ -6,6 +5,7 @@ import {
   Typography,
   IconButton,
   Divider,
+  useTheme,
 } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -13,28 +13,12 @@ import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  const theme = useTheme();
+  const styleOverrides = theme.components[`LoginPage`]?.styleOverrides || {};
+  const { root, loginBox, forgetPassword, socialBox } = styleOverrides;
   return (
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      paddingX={2}
-      minHeight="100vh"
-      bgcolor={"whitesmoke"}
-    >
-      <Box
-        maxWidth={400}
-        minHeight={534}
-        width="100%"
-        display="flex"
-        flexDirection="column"
-        justifyContent={"space-evenly"}
-        px={6}
-        py={10}
-        borderRadius={2}
-        textAlign={"center"}
-        bgcolor={"white"}
-      >
+    <Box sx={root}>
+      <Box sx={loginBox}>
         <Typography variant="h5" mb={1}>
           Sign in
         </Typography>
@@ -42,11 +26,7 @@ const Login = () => {
           <Typography variant="body1" mb={1}>
             Don’t have an account?
           </Typography>
-          <Typography
-            variant="subtitle2"
-            color="primary.main"
-            ml={0.5}
-          >
+          <Typography variant="subtitle2" color="primary.main" ml={0.5}>
             Get started
           </Typography>
         </Box>
@@ -58,12 +38,7 @@ const Login = () => {
             disableUnderline
             defaultValue="hello@gmail.com"
           />
-          <Box
-            display="flex"
-            justifyContent="end"
-            alignItems="center"
-            marginBottom={2}
-          >
+          <Box sx={forgetPassword}>
             <Typography variant="body1" marginTop="4px">
               Forgot password?
             </Typography>
@@ -80,7 +55,7 @@ const Login = () => {
           <Button variant="signIn">Sign in</Button>
         </Link>
         <Divider sx={{ my: 2 }}>OR</Divider>
-        <Box display="flex" justifyContent="center" gap={2}>
+        <Box sx={socialBox}>
           <IconButton>
             <GoogleIcon color="primary" />
           </IconButton>

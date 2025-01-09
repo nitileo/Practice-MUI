@@ -2,12 +2,13 @@ import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   typography: {
-    fontFamily: '"DM Sans Variable", "Roboto", "Helvetica", "Arial", sans-serif',
-    h1:{
+    fontFamily:
+      '"DM Sans Variable", "Roboto", "Helvetica", "Arial", sans-serif',
+    h1: {
       fontWeight: 800,
       fontSize: "40px",
     },
-    h2:{
+    h2: {
       fontWeight: 800,
       fontSize: "32px",
     },
@@ -73,7 +74,7 @@ const theme = createTheme({
       white: "#FFFFFF",
     },
     warning: {
-      main: "#FF9800", 
+      main: "#FF9800",
       light: "#FFC947",
       dark: "#ff5630",
     },
@@ -92,12 +93,12 @@ const globalTheme = createTheme(theme, {
         },
       },
     },
-    MuiToolbar:{
-      styleOverrides:{
-        root:{
-          padding:theme.spacing(6,6),
-        }
-      }
+    MuiToolbar: {
+      styleOverrides: {
+        root: {
+          padding: theme.spacing(6, 6),
+        },
+      },
     },
     MuiTableCell: {
       styleOverrides: {
@@ -147,16 +148,16 @@ const globalTheme = createTheme(theme, {
         contained: {
           backgroundColor: theme.palette.common.black,
           color: theme.palette.common.white,
-          fontWeight: "bold"
+          fontWeight: "bold",
         },
         root: {
           borderRadius: "8px",
         },
-        containedSecondary:{
+        containedSecondary: {
           backgroundColor: theme.palette.primary.main,
           color: theme.palette.common.white,
-          fontWeight: "bold"
-        }
+          fontWeight: "bold",
+        },
       },
     },
     MuiInputBase: {
@@ -165,7 +166,7 @@ const globalTheme = createTheme(theme, {
           padding: theme.spacing(3),
           border: `1px solid ${theme.palette.gray[300]}`,
           borderRadius: "8px",
-          backgroundColor: theme.palette.common.white
+          backgroundColor: theme.palette.common.white,
         },
       },
     },
@@ -183,7 +184,7 @@ const globalTheme = createTheme(theme, {
           boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
           transition: "transform 0.3s, box-shadow 0.3s",
           "&:hover": {
-            boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.2)",
+            boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.1)",
           },
         },
       },
@@ -229,72 +230,146 @@ const globalTheme = createTheme(theme, {
           backgroundColor: "transparent",
           boxShadow: "none",
           alignItems: "flex-end",
-          padding: theme.spacing(2,10)
+          padding: theme.spacing(2, 10),
         },
       },
     },
-    MuiTablePagination:{
-      styleOverrides:{
-        input:{
+    MuiTablePagination: {
+      styleOverrides: {
+        input: {
           padding: 0,
-          border: "none"
-        }
-      }
+          border: "none",
+        },
+      },
     },
-    MuiMenuItem:{
-      styleOverrides:{
-        root:{
-          borderRadius: "8px"
-        }
-      }
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          borderRadius: "8px",
+        },
+      },
     },
-    MuiPopover:{
-      styleOverrides:{
-        paper:{
+    MuiPopover: {
+      styleOverrides: {
+        paper: {
           borderRadius: "8px",
           boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-        }
-      }
+        },
+      },
     },
-    MuiPaper:{
+    MuiPaper: {
       styleOverrides: {
         root: {
           "&.MuiTableContainer-root": {
-            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)", 
+            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
           },
         },
       },
     },
-    MuiBadge:{
+    MuiBadge: {
       styleOverrides: {
         badge: {
-          backgroundColor: theme.palette.warning.dark, 
-          color: theme.palette.common.white, 
+          backgroundColor: theme.palette.warning.dark,
+          color: theme.palette.common.white,
         },
       },
     },
-    CustomCard:{
-      styleOverrides:{
-        boxContent:{
-          display:"flex",
+    CustomCard: {
+      styleOverrides: {
+        boxContent: {
+          display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
           gap: 1,
-          mt: 1
+          mt: 1,
         },
-        productColorBox:{
+        productColorBox: {
           width: 16,
           height: 16,
-          border: 2,
+          border: "solid 2px",
           borderRadius: 2,
           borderColor: theme.palette.gray[50],
-          ml: theme.spacing(-1.5)
+          ml: theme.spacing(-1.5),
+          boxShadow: "inset -1px 1px 2px rgba(0,0,0,0.2)"
         },
-        oldPriceText:{
+        oldPriceText: {
           display: "inline",
           mr: 2,
           color: "text.secondary",
-          textDecoration: "line-through"
+          textDecoration: "line-through",
+        },
+      },
+    },
+    SortProductBar: {
+      styleOverrides: {
+        MenuListSetting: {
+          p: 2,
+          gap: 1,
+          width: 160,
+          display: "flex",
+          flexDirection: "column",
+        },
+      },
+    },
+    Cart: {
+      styleOverrides: {
+        root: {
+          right: 0,
+          top: 112,
+          zIndex: 999,
+          display: "flex",
+          cursor: "pointer",
+          position: "fixed",
+          color: "text.primary",
+          borderTopLeftRadius: 16,
+          borderBottomLeftRadius: 16,
+          backgroundColor: theme.palette.common.white,
+          padding: theme.spacing(2, 6, 2, 4),
+          "&:hover": { opacity: 0.8 },
+        },
+        BadgeSetting: {
+          "& .MuiBadge-badge": {
+            right: 4,
+            top: 4,
+            border: "2px solid white",
+            padding: theme.spacing(0,1),
+          },
+        },
+      },
+    },
+    LoginPage:{
+      styleOverrides:{
+        root:{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          px: 2,
+          minHeight: "100vh",
+          backgroundColor: "whitesmoke",
+        },
+        loginBox:{
+          maxWidth: 400,
+          minHeight: 534,
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-evenly",
+          padding: theme.spacing(10,6),
+          borderRadius: 2,
+          textAlign: "center",
+          backgroundColor: theme.palette.common.white,
+          boxShadow: "1px 4px 12px rgba(0,0,0,0.1)"         
+        },
+        forgetPassword:{
+          display:"flex",
+          justifyContent: "end",
+          alignItems: "center",
+          mb: theme.spacing(2)
+        },
+        socialBox:{
+          display: "flex",
+          justifyContent: "center",
+          gap: theme.spacing(2)
         }
       }
     }
