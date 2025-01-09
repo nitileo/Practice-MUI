@@ -5,9 +5,14 @@ import {
   CardMedia,
   Chip,
   Typography,
+  useTheme,
 } from "@mui/material";
 
 const ProductCard = ({ product }) => {
+  const theme = useTheme();
+  const styleOverrides = theme.components[`CustomCard`]?.styleOverrides || {};
+  const { boxContent, productColorBox, oldPriceText } = styleOverrides;
+
   return (
     <Card>
       {product.label && (
@@ -15,7 +20,8 @@ const ProductCard = ({ product }) => {
           label={product.label}
           size="small"
           sx={{
-            backgroundColor: product.label === "SALE" ? "#f50057" : "#4caf50",
+            backgroundColor:
+              product.label === "SALE" ? "#f50057" : "success.light",
           }}
         />
       )}
@@ -24,41 +30,19 @@ const ProductCard = ({ product }) => {
         <Typography variant="body1" fontWeight="bold">
           {product.name}
         </Typography>
-        <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="space-between"
-          gap={1}
-          mt={1}
-        >
-          <Box display={"flex"}>
-          {product.colors.map((color, index) => (
-            <Box
-              key={index}
-              width={16} height={16} bgcolor={color} borderRadius={"50%"}
-            />
-          ))}
+        <Box sx={boxContent}>
+          <Box display={"flex"} marginLeft={2}>
+            {product.colors.map((color, index) => (
+              <Box key={index} bgcolor={color} sx={productColorBox} />
+            ))}
           </Box>
-          <Box mt={1} sx={{ marginY: "auto" }}>
+          <Box mt={1} my="auto">
             {product.oldPrice && (
-              <Typography
-                variant="body2"
-                component="span"
-                display={"inline"}
-                mr={2}
-                color="gray"
-                sx={{
-                  textDecoration: "line-through",
-                }}
-              >
+              <Typography variant="body1" component="span" sx={oldPriceText}>
                 {product.oldPrice}
               </Typography>
             )}
-            <Typography
-              variant="body2"
-              component="span"
-              fontWeight="bold"
-            >
+            <Typography variant="body1" component="span" fontWeight="bold">
               {product.price}
             </Typography>
           </Box>

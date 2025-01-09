@@ -1,4 +1,3 @@
-import { Paper } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
@@ -41,6 +40,7 @@ const theme = createTheme({
       fontSize: "16px",
     },
     body2: {
+      fontWeight: 400,
       fontSize: "14px",
     },
     caption: {
@@ -71,6 +71,11 @@ const theme = createTheme({
     common: {
       black: "#000000",
       white: "#FFFFFF",
+    },
+    warning: {
+      main: "#FF9800", 
+      light: "#FFC947",
+      dark: "#ff5630",
     },
   },
 });
@@ -128,7 +133,7 @@ const globalTheme = createTheme(theme, {
           style: {
             width: "100%",
             fontWeight: "bold",
-            fontSize: "15",
+            fontSize: "15px",
             backgroundColor: theme.palette.common.black,
             color: theme.palette.common.white,
             padding: theme.spacing(2, 5.5),
@@ -260,6 +265,39 @@ const globalTheme = createTheme(theme, {
         },
       },
     },
+    MuiBadge:{
+      styleOverrides: {
+        badge: {
+          backgroundColor: theme.palette.warning.dark, 
+          color: theme.palette.common.white, 
+        },
+      },
+    },
+    CustomCard:{
+      styleOverrides:{
+        boxContent:{
+          display:"flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: 1,
+          mt: 1
+        },
+        productColorBox:{
+          width: 16,
+          height: 16,
+          border: 2,
+          borderRadius: 2,
+          borderColor: theme.palette.gray[50],
+          ml: theme.spacing(-1.5)
+        },
+        oldPriceText:{
+          display: "inline",
+          mr: 2,
+          color: "text.secondary",
+          textDecoration: "line-through"
+        }
+      }
+    }
   },
 });
 

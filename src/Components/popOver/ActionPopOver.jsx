@@ -50,9 +50,9 @@ const ActionPopover = () => {
             </ListItemIcon>
             <Typography variant="body1">Edit</Typography>
           </MenuItem>
-          <MenuItem sx={{ color: "error.main" }}>
+          <MenuItem sx={{ color: "warning.dark" }}>
             <ListItemIcon>
-              <DeleteIcon fontSize="small" sx={{ color: "error.main" }} />
+              <DeleteIcon fontSize="small" sx={{ color: "warning.dark" }} />
             </ListItemIcon>
             <Typography variant="body1">Delete</Typography>
           </MenuItem>

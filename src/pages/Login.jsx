@@ -11,10 +11,8 @@ import GoogleIcon from "@mui/icons-material/Google";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
-import { useTheme } from "@emotion/react";
 
 const Login = () => {
-  const theme = useTheme();
   return (
     <Box
       display="flex"
@@ -46,7 +44,8 @@ const Login = () => {
           </Typography>
           <Typography
             variant="subtitle2"
-            sx={{ ml: 0.5, color: theme.palette.primary.main }}
+            color="primary.main"
+            ml={0.5}
           >
             Get started
           </Typography>
